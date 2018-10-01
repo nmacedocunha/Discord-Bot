@@ -8,7 +8,7 @@
 	!info @person
 		Student - Display name, university, course and year, email
 		Professor - Display name, university, course, subjects, email 
-	!info cadeira
+	!info subject
 		Display description and the professor. ( May display files for studying )
 
 !exams
