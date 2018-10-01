@@ -1,0 +1,38 @@
+!help
+	Display available bot commands
+!auth 
+	Authenticates user
+!info
+	Displays the requested information
+	
+	!info @person
+		Student - Display name, university, course and year, email
+		Professor - Display name, university, course, subjects, email 
+	!info cadeira
+		Display description and the professor. ( May display files for studying )
+
+!exams
+	Display student exam according to his course and year
+
+	Professor commands
+		!addexam
+		!rmvexam
+
+!events
+	Display events
+	
+	!events month
+		Display events on that month
+
+	!reqevent
+		Request event to be add
+	
+	!addevent 
+		Add event
+	!rmvevent
+		Remove event
+
+!students
+	Display students from specific course and year. ( Professor command )
+
+	Example : !students DJD 1y
