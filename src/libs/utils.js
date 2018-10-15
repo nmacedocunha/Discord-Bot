@@ -13,33 +13,31 @@ function loadCommands (commandsDir) {
   for (const file of commandFiles) {
     const command = require(path.join(commandsDir, file))
     commands.set(command.name, command)
-  }  
-  
-  saveCommands(commands);
-  
+  }
+
+  saveCommands(commands)
   return commands
 }
 
-function saveCommands(commands){
+function saveCommands (commands) {
   let commandList = {
     commands: []
-  };
-
-  let data = []; 
-
-  for(const cmd of commands){
-    data.push(process.env.PREFIX + cmd[1].name);
   }
 
-  commandList.commands = data;
+  let data = []
+
+  for (const cmd of commands) {
+    data.push(process.env.PREFIX + cmd[1].name)
+  }
+
+  commandList.commands = data
 
   fs.writeFile('commands.json', JSON.stringify(commandList), 'utf-8', (err) => {
-    if (err) throw err;
-    console.log('The file has been saved!');
-  });
+    if (err) throw err
+    console.log('The file has been saved!')
+  })
 }
 
 function noop () {}
-
 
 module.exports = { loadCommands, noopCommand, noop }
