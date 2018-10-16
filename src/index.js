@@ -26,13 +26,14 @@ client.on('message', message => {
   if (message.channel.type === 'text' && message.channel.name !== botChannel) {
     message.delete()
     message.author.send(`Please use the correct channel for bot commands. (#${botChannel})`)
-  } else {
-    const args = message.content.slice(prefix.length).split(/ +/)
-    const commandName = args.shift().toLowerCase()
-    const command = client.commands.get(commandName) || utils.noopCommand
-
-    command.execute(message, args)
+    return
   }
+
+  const args = message.content.slice(prefix.length).split(/ +/)
+  const commandName = args.shift().toLowerCase()
+  const command = client.commands.get(commandName) || utils.noopCommand
+
+  command.execute(message, args)
 })
 
 // Event
