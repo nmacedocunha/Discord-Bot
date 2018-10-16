@@ -28,7 +28,7 @@ client.on('message', message => {
     message.author.send(`Please use the correct channel for bot commands. (#${botChannel})`)
     return
   }
-  
+
   const args = message.content.slice(prefix.length).split(/ +/)
   const commandName = args.shift().toLowerCase()
   const command = client.commands.get(commandName) || utils.noopCommand
